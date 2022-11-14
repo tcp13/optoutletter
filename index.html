@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- metadata -->
+		<title>Opt Out Letter Generator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- seo -->
+		<meta name="title" content="Opt Out Letter Generator">
+		<meta name="description" content="Lorem ipsum.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://optoutletter.com/">
+		<meta property="og:title" content="Opt Out Letter Generator">
+		<meta property="og:description" content="Lorem ipsum.">
+		<meta property="og:image" content="nomail-thumbnail.png">
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://optoutletter.com/">
+		<meta property="twitter:title" content="Opt Out Letter Generator">
+		<meta property="twitter:description" content="lorem ipsum.">
+		<meta property="twitter:image" content="nomail-thumbnail.png">
+
+		<!-- styles -->
+		<link rel="stylesheet" href="styles.css">
+
+		<!-- favicons -->
+		<link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+		<link rel="manifest" href="favicons/site.webmanifest">
+		
+		<!-- Google fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div id="header">
+				<img src="nomail.png" alt="" style="width:3.157rem;padding-right:15px;vertical-align: -45%;">
+				<h1 style="display:inline;">Opt Out Letter Generator</h1>
+			</div>
+			<div id="controlBox">
+
+				<h2 style="margin-top:0px;">Specific Opt Outs</h2>
+
+				<div>
+					<input type="checkbox" id="check-unsolicited-mail" onclick="$('#unsolicited-mail').toggle();">
+					<label for="check-unsolicited-mail">Unsolicited Mail</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-unsolicited-email" onclick="$('#unsolicited-email').toggle();">
+					<label for="check-unsolicited-email">Unsolicited Emails</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-unsolicited-telecom" onclick="$('#unsolicited-telecom, #div-check-do-not-call').toggle();">
+					<label for="check-unsolicited-telecom">Unsolicited Calls and Text Messages</label>
+				</div>
+				<div id="div-check-do-not-call" style="display:none;">
+					<input type="checkbox" id="check-do-not-call" onclick="$('#do-not-call').toggle();">
+					<label for="check-do-not-call">I've previously added my phone number to the FTC's National <span class="tooltip">Do Not Call Registry<span class="tooltip-text">Visit DoNotCall.gov to opt out of all telemarketing calls.</span></span>.</label>
+				</div>
+
+				<h2>Applicable Federal Laws</h2>
+
+				<div>
+					<input type="checkbox" id="check-fsma" onclick="$('#fsma, #div-check-prescreened').toggle();">
+					<label for="check-fsma">I'm Sending this Opt Out to a Financial Institution</label>
+				</div>
+				<div id="div-check-prescreened" style="display:none;">
+					<input type="checkbox" id="check-prescreened" onclick="$('#prescreened').toggle();">
+					<label for="check-prescreened">I've previously opted out of <span class="tooltip">prescreened offers<span class="tooltip-text">Visit OptOutPrescreen.com to opt out of prescreened offers of credit from all financial instituations.</span></span>.</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-fcra" onclick="$('#fcra').toggle();">
+					<label for="check-fcra">I'm Sending this Opt Out to a Credit Institution</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-ferpa" onclick="$('#ferpa').toggle();">
+					<label for="check-ferpa">I'm Sending this Opt Out to a Education Institution</label>
+				</div>
+
+				<h2>Applicable State Laws</h2>
+
+				<div>
+					<input type="checkbox" id="check-state-ca" onclick="$('#state-ca').toggle();">
+					<label for="check-state-ca">I'm a Resident of California</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-state-co" onclick="$('#state-co').toggle();">
+					<label for="check-state-co">I'm a Resident of Colorado</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-state-ct" onclick="$('#state-ct').toggle();">
+					<label for="check-state-ct">I'm a Resident of Connecticut</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-state-ut" onclick="$('#state-ut').toggle();">
+					<label for="check-state-ut">I'm a Resident of Utah</label>
+				</div>
+				<div>
+					<input type="checkbox" id="check-state-va" onclick="$('#state-va').toggle();">
+					<label for="check-state-va">I'm a Resident of Virginia</label>
+				</div>
+			</div>
+			<div id="letterBox">
+				<div id="opening">
+					<strong>To Whom It May Concern:</strong>
+					<p>This is a request that my personal information is immediately removed from all of your contact lists. I do not wish to receive marketing offers from your company or its affiliates.</p>
+				</div>
+
+				<div id="unsolicited-mail" style="display:none;">
+					<strong>Please do not contact me with unsolicited mail.</strong>
+					<p>You are currently sending unsolicited mail to:</p>
+					<textarea id="input-mail" aria-label="your name and address" placeholder="your name and address" rows="4"></textarea>
+				</div>
+
+				<div id="unsolicited-email" style="display:none;">
+					<strong>Please do not contact me with unsolicited email.</strong>
+					<p>You are currently sending unsolicited email to:</p>
+					<input id="input-email" type="text" aria-label="your email" placeholder="your email">
+				</div>
+
+				<div id="unsolicited-telecom" style="display:none;">
+					<strong>Please do not contact me with unsolicited calls or text messages.</strong>
+					<p>You are currently sending unsolicited telecommunications to:</p>
+					<input id="input-phone" type="text" aria-label="your phone number" placeholder="your phone number">
+					<p id="do-not-call" style="display:none;">Please also note that my phone number is listed on the Federal Trade Commission’s National Do Not Call Registry.</p>
+				</div>
+
+				<div id="fsma" style="display:none;">
+					<strong>Please do not share my personal information.</strong>
+					<p>I am asserting my rights under the Financial Services Modernization Act (the Gramm‐Leach‐Bliley Act) to opt out of any sharing or sales of my information by your company. I hereby opt out of the sale, rental, distribution, exchange, or other disclosure of any and all personal information you have about me. This includes but is not limited to my name, address, phone number, email addresses, social security number, driver’s license number, financial account information, and my transaction history with you.</p>
+					<p id="prescreened" style="display:none;">Please also note that I have previously opted out of prescreened offers of credit as permitted by the Fair Credit Reporting Act.</p>
+				</div>
+
+				<div id="fcra" style="display:none;">
+					<strong>Please do not share information about my creditworthiness.</strong>
+					<p>I am asserting my rights under the Fair Credit Reporting Act to opt out of any sharing or sales of information about my creditworthiness by your company.</p>
+				</div>
+
+				<div id="ferpa" style="display:none;">
+					<strong>Please do not share my personal information.</strong>
+					<p>I am asserting my rights under the Family Educational Rights and Privacy Act (FERPA) to limit the sharing of designated “directory information” to third parties, including marketing organizations, political officers, news media, the U.S. Military, and other educational institutions. I hereby opt out of the disclosure of any and all personal information you have about me. This includes but is not limited to my name, address, and contact information.</p>
+				</div>
+
+				<div id="state-ca" style="display:none;">
+					<strong>Please do not share my personal information.</strong>
+					<p>As a resident of California, I am asserting my rights under the California Consumer Privacy Act of 2018 (CCPA) to opt out of any sharing or sales of my information by your company. I hereby opt out of the sale, rental, distribution, exchange, or other disclosure of any and all personal information you have about me. This includes but is not limited to my name, email address, phone number, home address, social security number, records of products purchased, geolocation data, and inferences from other personal information.</p>
+				</div>
+
+				<div id="state-co" style="display:none;">
+					<strong>Please do not share my personal information.</strong>
+					<p>As a resident of Colorado, I am asserting my rights under the Colorado Privacy Act of 2021 (CPA) to opt out of any sharing or sales of my information by your company. I hereby opt out of the sale, rental, distribution, exchange, or other disclosure of any and all personal information you have about me. This includes but is not limited to my name, email address, phone number, home address, social security number, records of products purchased, geolocation data, and inferences from other personal information.</p>
+				</div>
+
+				<div id="state-ct" style="display:none;">
+					<strong>Please do not share my personal information.</strong>
+					<p>As a resident of Connecticut, I am asserting my rights under the Connecticut Data Privacy Act of 2022 (CTDPA) to opt out of any sharing or sales of my information by your company. I hereby opt out of the sale, rental, distribution, exchange, or other disclosure of any and all personal information you have about me. This includes but is not limited to my name, email address, phone number, home address, social security number, records of products purchased, geolocation data, and inferences from other personal information.</p>
+				</div>
+
+				<div id="state-ut" style="display:none;">
+					<strong>Please do not share my personal information.</strong>
+					<p>As a resident of Utah, I am asserting my rights under the Utah Consumer Privacy Act of 2022 (UCPA) to opt out of any sharing or sales of my information by your company. I hereby opt out of the sale, rental, distribution, exchange, or other disclosure of any and all personal information you have about me. This includes but is not limited to my name, email address, phone number, home address, social security number, records of products purchased, geolocation data, and inferences from other personal information.</p>
+				</div>
+
+				<div id="state-va" style="display:none;">
+					<strong>Please do not share my personal information.</strong>
+					<p>As a resident of Virginia, I am asserting my rights under the Virginia Consumer Data Protection Act of 2021 (VCDPA) to opt out of any sharing or sales of my information by your company. I hereby opt out of the sale, rental, distribution, exchange, or other disclosure of any and all personal information you have about me. This includes but is not limited to my name, email address, phone number, home address, social security number, records of products purchased, geolocation data, and inferences from other personal information.</p>
+				</div>
+
+				<div id="closing">
+					<hr>
+					<p>Thank you for respecting my privacy. Please promptly confirm in writing your intent to honor this request.</p>
+				</div>
+			</div>
+
+			<div id="printFooter" style="display:none;">
+				<img src="nomail.png" alt="" style="width:1rem;margin-right:5px;vertical-align:-4px;">
+				<p style="display:inline;">Generated with OptOutLetter.com</p>
+			</div>
+
+			<div id="actionBar">
+				<button onclick="window.print();">Print</button>
+				<button onclick="copyToClipboard();">Copy Text to Clipboard</button>
+				<span id="copyStatus" style="display:none;margin-left:5px;">Copied to Clipboard!</span>
+			</div>
+
+			<div id="instructionsBox">
+				<h2>Sending Instructions</h2>
+				<p>Print the opt out letter and mail it to whoever won't leave you alone. Address the envelope to the company's name, with "ATTN: Privacy Compliance Officer" on the second line, followed by the corporate mailing address (which can typically be found by searching online). If they've sent you physical mail, you can respond to the provided return address or even send it through any prepaid return envelopes.</p>
+				<p>Remember, just because you've sent an opt out letter doesn't guarantee the company will actually comply with your request! Visit the <a href="/faq.html">FAQ page</a> to learn more about the need for comprehensive federal privacy regulations.</p>
+			</div>
+		</div>
+	</body>
+	
+	<footer>
+		<div class="container">
+			<p class="footer-text"><strong>OptOutLetter.com v1.0</strong><br>Tyler Puckett © 2022<br><a href="/terms.html">Terms of Use</a> | <a href="https://tyler-puckett.com/#page-section-627c16fe9e1aa7738a176d15" target="_blank">Feedback</a></p>
+			<div id="socialShare">
+				<h2>Share:</h2>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//www.OptOutLetter.com" target="_blank"><img src="icons/facebook.svg"></a>
+				<a href="https://twitter.com/intent/tweet?text=https%3A//www.OptOutLetter.com" target="_blank"><img src="icons/twitter.svg"></a>
+				<a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//www.OptOutLetter.com" target="_blank"><img src="icons/linkedin.svg"></a>
+			</div>
+		</div>
+		<br><br>
+
+
+		<textarea id="clipboard" style="display:none;"></textarea>	
+
+		<!-- scripts -->
+		<script src="script.js"></script>
+	</footer>
+</html>
